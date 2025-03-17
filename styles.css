@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #140E17;
+    max-width: 1440px;
+    width: 100%;
+    font-family: "Manrope", sans-serif;
+}
+
+/******CONTAINERS*********/
+.container-1018 {
+    max-width: 1018px;
+    width: 100%;
+    margin: 64px auto 0 auto;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 80px auto 0 auto;
+}
+
+/********** HEADER *********/
+
+.header-wrapper {
+    background-color: #333333;
+    border-radius: 33px;
+    padding: 24px 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 41px;
+}
+
+.logo {
+    max-width: 191px;
+    width: 100%;
+    height: auto;
+}
+
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+/*****LOGIN*****/
+.profile {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 56px;
+    height: auto;
+}
+
+/*CTA*/
+.CTA {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-body {
+    display: flex;
+
+}
+
+.cta-h1 {
+    position: absolute;
+    right: 13px;
+    top: -14px;
+}
+
+.cta-underline {
+    position: absolute;
+    bottom: 108px;
+    left: 57px;
+}
+
+.cta-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 539px;
+    width: 100%;
+    height: auto;
+    gap: 53px;
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.cta-text h1 {
+    font-size: 68px;
+    font-weight: 800;
+    color: white;
+    line-height: 110%;
+
+}
+
+.cta-text p {
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+/*cta form*/
+
+.cta-form {
+    height: 61px;
+    display: flex;
+    gap: 34px;
+}
+
+.cta-form form {
+    max-width: 317px;
+    width: 100%;
+}
+
+.cta-form input {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    padding: 18px 14px;
+    border: none;
+    outline: none;
+    color: #76757B;
+}
+
+::placeholder {
+    color: #76757B;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    max-width: 222px;
+    width: 100%;
+    height: auto;
+    background: #F5FA93;
+    color: black;
+    border-radius: 18px;
+    padding: 18px 14px;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.button-body {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*CARDS SECTION*/
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card {
+    max-width: 317px;
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    border: 1px solid #F5FA93;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.card-image {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 6px;
+}
+
+.snowflake {
+    justify-content: center;
+}
+
+.star {
+    justify-content: flex-end;
+}
+
+.card h2 {
+    color: white;
+    font-size: 42px;
+    line-height: 54px;
+}
+
+.card p {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+/*WORK EXPERIENCE SECTION*/
+.work-experience {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.work-experience .left {
+    display: flex;
+    align-items: flex-end;
+    max-width: 545px;
+    width: 100%;
+}
+.work-experience-title {
+    color: #AADB6B;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 3px;
+}
+
+.companies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    border: 1px solid #333333;
+    border-radius: 24px;
+    max-width: 545px;
+    width: 100%;
+    height: auto;
+    padding: 18px;
+
+}
+.company .company-info .company-name {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.company .working-period,
+.company-link a,
+.position {
+    color: #76757B;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.position {
+    color: white;
+}
+
+/*Company card*/
+.company-card {
+    max-width: 220px;
+    width: 100%;
+    background: #FFAFB0;
+    border-radius: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 21px;
+    gap: 12px;
+}
+
+.company-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.company-card p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+
+}
+
+.company-card-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.company-card-btn a {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    max-width: 118px;
+    width: 100%;
+    height: auto;
+    padding: 12px 10px;
+    border-radius: 18px;
+    border: 1px solid #333333;
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 24px;
+}
+
+/*Try free*/
+.try-free {
+    border: 1px solid #333333;
+    border-radius: 32px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.try-free p {
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+.try-free-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.try-free a {
+    border: 1px solid #333333;
+    border-radius: 18px;
+    color: white;
+    font-weight: 600;
+    line-height: 18px;
+    text-decoration: none;
+    padding: 18px 14px;
+}
+
+/*visit card*/
+.visit-card {
+    max-width: 658px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    border: 2px solid #333333;
+    background: #140E17;
+    padding: 29px 72px;
+    position: absolute;
+    top: 74px;
+    /*left: 171px;*/
+    display: flex;
+    gap: 80px;
+}
+
+.text-area h3 {
+    color: white;
+    font-weight: 700;
+    font-size: 31px;
+    margin-top: 27px;
+}
+
+.text-area p {
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.visit-card-btn {
+    background: #F9D69E;
+    border-radius: 8px;
+    max-width: 106px;
+    width: 100%;
+    margin-top: 29px;
+    display: flex;
+    align-items: center;
+    padding: 8px 6px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.contact-me {
+    width: 100%;
+    text-align: center;
+}
+
+.visit-card-btn img {
+    width: 10px;
+    height: 10px;
+}
+
+/*RATES SECTION*/
+.rates .title,
+.faq .title {
+    color: #F5FA93;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    margin-left: 24px;
+}
+
+.rates-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 10px;
+}
+
+.card.premium {
+    position: relative;
+}
+.premium-tag {
+    position: absolute;
+    top: -25px;
+    right: 32px;
+    max-width: 144px;
+    width: 100%;
+    background: black;
+    border-radius: 18px;
+    border: 1px solid #333333;
+    padding: 14px;
+}
+
+.premium-tag span {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+.rates-cards .card {
+    background: #F5FA93;
+    max-width: 484px;
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.rates-cards .card h4 {
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+}
+
+.big {
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 110px;
+}
+
+.per-month {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.service-description {
+    color: black !important;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.service-list {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    list-style: none;
+    height: 120px;
+}
+
+.service-list li i {
+    margin-right: 6px;
+}
+
+.rates-btn {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 18px;
+    background: black;
+    padding: 18px 14px;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    text-decoration: none;
+}
+
+.rates-btn span {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/*FAQ SECTION*/
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.qa {
+    border: 1px solid #333333;
+    border-radius: 32px;
+    padding: 24px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer {
+    margin-top: 32px;
+    color: #76757B;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+}
+.question .title {
+    color: white;
+    font-weight: 500;
+    margin-left: 0;
+}
+
+/*FOOTER*/
+footer {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-logo-socials,
+.footer-links {
+    max-width: 232px;
+    width: 100%;
+    height: auto;
+}
+
+.footer-logo-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.chat-area {
+    height: 220px;
+    position: relative;
+}
+
+.chat {
+    position: absolute;
+    right: 0;
+    top: 110px;
+}
