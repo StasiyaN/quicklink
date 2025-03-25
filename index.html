@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-y...==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
 
     <title>Quicklink</title>
 </head>
@@ -29,6 +30,28 @@
                 <button class="profile">
                     <img src="./assets/icons/login.svg" alt="Войти в профиль" class="profile-icon">
                 </button>
+                <details>
+                    <summary>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </summary>
+                    <div class="summary-content">
+                        <div class="sum-profile">
+                            <span>Вход</span>
+                            <a href="#">
+                                <img src="./assets/icons/login.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="divider"></div>
+                        <a href="#">Что это?</a>
+                        <div class="divider"></div>
+                        <a href="#">Как это выглядит?</a>
+                        <div class="divider"></div>
+                        <a href="#">Сколько стоит?</a>
+                        <div class="divider"></div>
+                        <a href="#" class="last-row">FAQ</a>
+                    </div>
+                </details>
             </div>
         </div>
     </header>
@@ -42,18 +65,22 @@
                         <img src="./assets/images/cta-h1.svg" alt="" class="cta-h1">
                         <img src="./assets/images/cta-underline.svg" alt="" class="cta-underline">
                     </div>
-                    <img src="./assets/images/cta-image.webp" alt="Фото телефона" class="cta-image">
+                    <div class="cta-image-wrapper">
+                        <img src="./assets/images/cta-image.webp" alt="Фото телефона" class="cta-image">
+                    </div>
 
                 </div>
                 <div class="cta-form">
                     <form action="#">
-                        <input type="email" placeholder="your@mail.com">
+                        <label for="email">
+                            <input type="email" id="email" placeholder="your@mail.com">
+                        </label>
                     </form>
                     <button class="cta-button">
-                        <div class="button-body">
+                        <span class="button-body">
                             <span>Создать страницу</span>
                             <img src="./assets/icons/arrow-icon.svg" alt="arrow" class="cta-arrow-icon">
-                        </div>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -199,6 +226,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="test">
+            <a href="./details.html">DETAILS PRACTICE</a>
         </div>
         <div class="container">
             <div class="faq">
