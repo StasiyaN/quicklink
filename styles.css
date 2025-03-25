@@ -619,7 +619,7 @@ footer {
 
 /*MQ*/
 
-@media (min-width: 768px) and (max-width: 966px) {
+@media (max-width: 966px) {
     body {
         padding: 0 24px;
     }
@@ -758,12 +758,97 @@ footer {
     }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
-    .menu,
-    .profile-icon {
-        display: none;
+
+
+@media (max-width: 768px) {
+
+    .work-experience .left {
+        max-width: 392px;
+    }
+    .work-experience-title {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .company .company-info .company-name {
+        font-size: 13px;
+        line-height: 15px;
     }
 
+    .company .working-period,
+    .company-link a, .position {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .company-card {
+        max-width: 158px;
+    }
+    .company-card h3 {
+        font-size: 19px;
+        line-height: 25px;
+    }
+
+    .company-card p {
+        font-size: 9px;
+        line-height: 12px;
+    }
+
+    .company-card-btn a {
+        max-width: 85px;
+        padding: 8px 6px;
+        font-size: 8px;
+        line-height: 11px;
+    }
+
+    .company-card-btn a img {
+        width: 11px;
+        height: 11px;
+    }
+
+    .visit-card {
+        max-width: 474px;
+        padding: 21px 52px;
+    }
+
+    .visit-card img {
+        width: 131px;
+        height: 131px;
+    }
+
+    .text-area {
+        max-width: 180px;
+    }
+
+    .text-area h3 {
+        color: white;
+        font-weight: 700;
+        font-size: 22px;
+        margin-top: 19px;
+        line-height: 110%;
+    }
+
+    .text-area p {
+        font-size: 7px;
+        margin-top: 7px;
+    }
+
+    .visit-card-btn {
+        max-width: 76px;
+    }
+
+    .visit-card-btn img {
+        width: 7px;
+        height: 7px;
+    }
+
+    .rates-cards {
+        gap: 32px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
 
 }
