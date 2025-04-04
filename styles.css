@@ -564,6 +564,8 @@ details {
 .question {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
 }
 
 .answer {
@@ -577,6 +579,39 @@ details {
     color: white;
     font-weight: 500;
     margin-left: 0;
+    flex: 1; /* Allows title to take available space */
+}
+
+.faq-icon-container {
+    display: flex;
+    margin-left: auto; /* Pushes icons to the right */
+    padding-left: 16px; /* Additional spacing */
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Fixed width for icons */
+    height: 24px; /* Fixed height for icons */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+
+.faq-details {
+    display: flex;
+}
+
+.faq-details.question {
+    justify-content: space-between;
+}
+.faq-details[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-details[open] .closed-icon {
+    display: none;
+}
+
+.faq-details[open] .opened-icon {
+    display: block;
 }
 
 /*FOOTER*/
@@ -679,6 +714,9 @@ footer {
         /*max-width: 1018px;*/
         width: 100%;
         z-index: 4;
+        position: absolute;
+        display: flex;
+        top: -3px;
     }
 
     /* Close menu when clicking outside */
@@ -686,6 +724,7 @@ footer {
         position: absolute;
         right: 0;
         z-index: 2;
+        top: 24px;
     }
     /* Hide the default triangle icon */
     summary::-webkit-details-marker {
@@ -717,13 +756,12 @@ footer {
         background: #333333;
         padding-left: 30px;
         margin: 0 24px 0 24px;
-        border-bottom-left-radius: 32px;
-        border-bottom-right-radius: 32px;
+        border-radius: 32px;
 
     }
 
     .sum-profile {
-        padding-top: 78px;
+        padding-top: 136px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -746,6 +784,25 @@ footer {
     }
     .last-row {
         padding-bottom: 42px !important;
+    }
+
+    .overlay {
+       opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 3;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    details[open] ~ .overlay {
+        opacity: 1;
+        pointer-events: auto;
+
     }
 
     /*cta*/
