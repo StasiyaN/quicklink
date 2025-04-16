@@ -31,13 +31,15 @@ body {
     padding: 24px 18px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 nav {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 41px;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
 }
 
 .logo {
@@ -46,6 +48,49 @@ nav {
     height: auto;
 }
 
+#burger-menu {
+    display: none; /* Hide the checkbox (handled by label) */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 3;
+}
+
+label[for="burger-menu"] {
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer; /* Shows it's clickable */
+    max-width: 56px; /* Optional: controls clickable area */
+    padding: 17px 21px;
+    border-radius: 16px;
+    background: #76757B;
+}
+
+.burger-line {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+#burger-menu:checked ~ .header-wrapper nav label .burger-line:nth-child(1) {
+    transform: rotate(45deg);
+}
+#burger-menu:checked ~ .header-wrapper nav label .burger-line:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
+}
 
 .menu {
     display: flex;
@@ -61,33 +106,37 @@ nav {
     color: white;
     font-weight: 500;
     font-size: 20px;
-    transition: color 0.3s ease-in-out;
+    /*transition: color 0.3s ease-in-out;*/
 }
 
 /*****LOGIN*****/
-.profile {
+.profile-wrapper {
     background: none;
     border: none;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
     cursor: pointer;
 }
 
-.profile-icon {
+.profile-wrapper a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    display: none;
+
+}
+
+.profile-wrapper-icon {
     width: 56px;
     height: auto;
 }
 
-details {
-    display: none;
-}
 
 /*CTA*/
-.CTA {
+.cta {
     display: flex;
     flex-direction: column;
 }
@@ -566,6 +615,7 @@ details {
     justify-content: space-between;
     cursor: pointer;
     list-style: none;
+    width: 100%;
 }
 
 .answer {
@@ -594,23 +644,20 @@ details {
 }
 
 
-.faq-details {
+.details {
     display: flex;
 }
 
-.faq-details.question {
-    justify-content: space-between;
-}
-.faq-details[open] {
+.details[open] {
     display: flex;
     flex-direction: column;
 }
 
-.faq-details[open] .closed-icon {
+.details[open] .closed-icon {
     display: none;
 }
 
-.faq-details[open] .opened-icon {
+.details[open] .opened-icon {
     display: block;
 }
 
@@ -671,139 +718,99 @@ footer {
 
 
     .menu,
-    .profile-icon {
+    .profile-wrapper {
         display: none;
     }
 
-    .header-wrapper {
-        position: relative;
 
-    }
-
-    details {
-        display: block;
-        position: absolute;
-        right: 24px;
-    }
-
-    /* On open: rotate into an "X" */
-    details[open] .burger-line:nth-child(1) {
-        transform: rotate(45deg);
-    }
-
-    details[open] .burger-line:nth-child(2) {
-        transform: translateY(-5px) rotate(-45deg);
-    }
-
-    summary {
-        width: 56px;
-        height: 40px;
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        background: #76757B;
-        padding: 17px 21px;
-        border-radius: 16px;
-    }
-
-    details[open] {
-        /*max-width: 1018px;*/
+    nav {
+        flex-direction: row-reverse;
+        gap: 10px;
+        justify-content: space-between;
         width: 100%;
+
+    }
+
+    label[for="burger-menu"] {
+        display: flex;
+    }
+
+    #burger-menu:checked ~ .header-wrapper {
+        position: absolute;
+        width: 95%;
         z-index: 4;
-        position: absolute;
-        display: flex;
-        top: -3px;
+        top: 64px;
     }
 
-    /* Close menu when clicking outside */
-    details[open] summary {
-        position: absolute;
-        right: 0;
-        z-index: 2;
-        top: 24px;
+    #burger-menu:checked ~ .overlay {
+        display: block;
     }
-    /* Hide the default triangle icon */
-    summary::-webkit-details-marker {
+
+    #burger-menu:checked ~ .header-wrapper nav label[for="burger-menu"]{
+        position: absolute;
+        z-index: 5;
+        top: 20px;
+        right: 20px;
+
+
+
+    }
+    #burger-menu:checked ~ .header-wrapper nav {
+        height: fit-content;
+        flex-direction: column-reverse;
+    }
+
+    #burger-menu:checked ~ .header-wrapper nav .divider,
+    #burger-menu:checked ~ .header-wrapper nav .menu .divider {
+        display: block;
+        width: 100%;
+        background: #76757B;
+        height: 1px;
+    }
+
+    #burger-menu:checked ~ .header-wrapper nav .menu {
+        display: flex;
+        flex-direction: column;
+        background: #333333;
+        z-index: 4;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #burger-menu:checked ~ .header-wrapper nav .menu li a,
+    #burger-menu:checked ~ .header-wrapper nav .profile-wrapper .profile-enter {
+        padding-left: 24px;
+    }
+
+    #burger-menu:checked ~ .header-wrapper nav .menu li a:hover,
+    #burger-menu:checked ~ .header-wrapper nav .profile-wrapper .profile-enter .enter:hover {
+        color: #F5FA93;
+    }
+
+    #burger-menu:checked ~ .header-wrapper nav .logo {
         display: none;
     }
 
-    /* Creating burger lines */
-    .burger-line {
-        display: block;
-        width: 14px;
-        height: 2px;
-        background-color: white;
-        transition: transform 0.3s ease;
-        transform-origin: center;
-    }
-
-    .summary-wrapper {
-        position: absolute;
-        z-index: 1;
-        max-width: 1018px;
-        width: 100%;
-
-    }
-    .summary-content {
+    #burger-menu:checked ~ .header-wrapper nav .profile-wrapper {
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 24px;
-        background: #333333;
-        padding-left: 30px;
-        margin: 0 24px 0 24px;
-        border-radius: 32px;
-
     }
 
-    .sum-profile {
-        padding-top: 136px;
+    #burger-menu:checked ~ .header-wrapper nav .profile-wrapper .profile-enter {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-    }
-
-    .divider {
-        width: 93%;
-        height: 1px;
-        background: #76757B;
-    }
-
-    .summary-content a,
-    .sum-profile span {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 28px;
-        padding: 24px;
-    }
-    .last-row {
-        padding-bottom: 42px !important;
-    }
-
-    .overlay {
-       opacity: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 3;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
+        margin-top: 112px;
+        margin-bottom: 20px;
     }
 
-    details[open] ~ .overlay {
-        opacity: 1;
-        pointer-events: auto;
-
+    #burger-menu:checked ~ .header-wrapper nav .profile-wrapper .enter {
+        display: block;
     }
+
+
+
 
     /*cta*/
     .cta-image-wrapper {
@@ -956,7 +963,6 @@ footer {
     .cta-underline {
         left: 0;
     }
-
 
 }
 
