@@ -596,7 +596,6 @@ label[for="burger-menu"] {
 }
 
 /*FAQ SECTION*/
-
 .questions {
     display: flex;
     flex-direction: column;
@@ -625,6 +624,7 @@ label[for="burger-menu"] {
     font-size: 18px;
     line-height: 26px;
 }
+
 .question .title {
     color: white;
     font-weight: 500;
@@ -642,7 +642,6 @@ label[for="burger-menu"] {
     height: 24px; /* Fixed height for icons */
     flex-shrink: 0; /* Prevents shrinking */
 }
-
 
 .details {
     display: flex;
@@ -710,12 +709,10 @@ footer {
 }
 
 /*MQ*/
-
 @media (max-width: 966px) {
     body {
         padding: 0 24px;
     }
-
 
     .menu,
     .profile-wrapper {
@@ -737,7 +734,7 @@ footer {
 
     #burger-menu:checked ~ .header-wrapper {
         position: absolute;
-        width: 95%;
+        width: 93%;
         z-index: 4;
         top: 64px;
     }
@@ -751,10 +748,8 @@ footer {
         z-index: 5;
         top: 20px;
         right: 20px;
-
-
-
     }
+
     #burger-menu:checked ~ .header-wrapper nav {
         height: fit-content;
         flex-direction: column-reverse;
@@ -809,9 +804,6 @@ footer {
         display: block;
     }
 
-
-
-
     /*cta*/
     .cta-image-wrapper {
         position: absolute;
@@ -838,9 +830,8 @@ footer {
     }
 }
 
-
-
 @media (max-width: 768px) {
+
 
     .work-experience .left {
         max-width: 392px;
@@ -975,9 +966,11 @@ footer {
         width: 50px;
         height: auto;
     }
-
 }
 @media (max-width: 480px) {
+    #burger-menu:checked ~ .header-wrapper {
+        width: 90%;
+    }
 
     .cta-underline {
         bottom: 0;
@@ -1084,17 +1077,14 @@ footer {
         height: 4px;
 
     }
-
-
-
-
 }
 @media (max-width: 375px) {
+    #burger-menu:checked ~ .header-wrapper {
+        width: 90%;
+    }
     .cta-h1 {
         width: 26px;
         height: auto;
         right: 0;
     }
-
-
 }
